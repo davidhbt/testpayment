@@ -35,7 +35,7 @@ const CheckoutForm = () => {
 
     try {
       // Send payment data to the backend to initialize the payment
-      const response = await axios.post('http://localhost:5400/api/checkout', formData);
+      const response = await axios.post('https://chapaapitest.onrender.com/api/checkout', formData);
 
       // Extract the payment URL and tx_ref (transaction reference)
       if (response.data.status === 'success') {
@@ -61,7 +61,7 @@ const CheckoutForm = () => {
   const pollPaymentStatus = async (txRef) => {
     const interval = setInterval(async () => {
       try {
-        const response = await axios.get(`http://localhost:5400/api/payment-status/${txRef}`);
+        const response = await axios.get(`https://chapaapitest.onrender.com/api/payment-status/${txRef}`);
         const status = response.data.status;
 
         if (status === 'success' || status === 'failed') {
