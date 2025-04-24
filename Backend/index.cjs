@@ -65,7 +65,7 @@ app.post('/callback', async (req, res) => {
 
     const { status: verifyStatus, data: verifyData } = verifyResponse.data;
 
-    if (verifyStatus === 'success' && verifyData.payment_status === 'SUCCESS') {
+    if (verifyStatus === 'success' && verifyData.payment_status === 'sucess') {
       console.log(`Payment verified successfully for tx_ref: ${tx_ref}`);
       // Update payment status to 'success'
       paymentStatuses[tx_ref] = 'success';
