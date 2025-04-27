@@ -16,7 +16,7 @@ const CheckoutForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [txRef, setTxRef] = useState(null);
-  const [paymentStatus, setPaymentStatus] = useState('pending');  // Track payment status
+  const [paymentStatus, setPaymentStatus] = useState('');  // Track payment status
 
   // Handle input change
   const handleChange = (e) => {
